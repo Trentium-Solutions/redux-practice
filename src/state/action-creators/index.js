@@ -1,19 +1,12 @@
 export const change = (amount, choice) => (state) => {
-  if (choice === "plus") {
-    const value = state.count + amount;
-    return (dispatch) => {
-      dispatch({
-        type: "counter",
-        payload: value,
-      });
-    };
-  } else {
-    const value = state.count - amount;
-    return (dispatch) => {
-      dispatch({
-        type: "counter",
-        payload: value,
-      });
-    };
-  }
+  return (dispatch) => {
+    let value;
+    choice === "plus"
+      ? (value = state.count + amount)
+      : (value = state.count - amount);
+    dispatch({
+      type: "counter",
+      payload: value,
+    });
+  };
 };

@@ -13,7 +13,7 @@ function Counter() {
         <button
           className="btn btn-primary mx-3"
           // onClick={() => dispatch(actionCreators.decrement(1))}
-          onClick={() => dispatch(actionCreators.change(1, "minus"))}
+          onClick={() => dispatch(actionCreators.change(1, "minus")(count))}
           disabled={count <= 0}
         >
           -
@@ -22,7 +22,7 @@ function Counter() {
         <button
           className="btn btn-primary mx-3"
           // onClick={() => dispatch(actionCreators.increment(1))}
-          onClick={() => dispatch(actionCreators.change(1, "plus"))}
+          onClick={() => dispatch(actionCreators.change(1, "plus")(count))}
         >
           +
         </button>
